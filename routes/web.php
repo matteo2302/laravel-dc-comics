@@ -23,3 +23,8 @@ Route::get('/header', function () {
     $fumetti = config('fumetti');
     return view('header', compact('fumetti'));
 })->name('index');
+Route::get('/card/{index}', function ($index) {
+
+    $fumetti = config('fumetti');
+    return view('header', compact('fumetti'));
+})->name('index');

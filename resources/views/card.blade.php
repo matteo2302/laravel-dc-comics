@@ -3,7 +3,9 @@
 @section('fumetti')
     @foreach ($fumetti as $fumetto)
         <ul>
-            <li><a href="{{ route('card/$index') }}"></a>{{ $fumetto->title }}</li>
+            <li>{{ $fumetto->title }}</li>
+            <li>{{ $fumetto->description }}</li>
+            <li>{{ $fumetto->price }}</li>
         </ul>
     @endforeach
 @endsection
