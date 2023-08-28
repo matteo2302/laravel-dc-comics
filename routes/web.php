@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Folder\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-    $fumetti = config('fumetti');
-    return view('layout.main', compact('fumetti'));
-})->name('main');
-Route::get('/header', function () {
-
-    $fumetti = config('fumetti');
-    return view('header', compact('fumetti'));
-})->name('index');
-Route::get('/card/{index}', function ($index) {
-
-    $fumetti = config('fumetti');
-    return view('header', compact('fumetti'));
-})->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('main');
+Route::get('/header', [HomeController::class, 'index'])->name('list');
+Route::get('/card/{index}', [HomeController::class, 'show'])->name('card');
+Route::post('/add', [HomeController::class, 'create'])->name('add');
+// Route::post('/card/{index}', [HomeController::class, 'store'])->name('card');
