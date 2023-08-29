@@ -22,6 +22,11 @@ class HomeController extends Controller
         $fumetti = config('fumetti');
         return view('add', compact('fumetti'));
     }
+    public function store()
+    {
+        $fumetti = config('fumetti');
+        return view('add', compact('fumetti'));
+    }
     // public function store()
     // {
     //     $fumetti = config('fumetti');
