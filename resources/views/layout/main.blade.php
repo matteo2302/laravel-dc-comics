@@ -18,6 +18,7 @@
 <body>
 
     @yield('fumetti')
+
 </body>
 
 </html>

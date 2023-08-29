@@ -3,24 +3,19 @@
 namespace App\Http\Controllers\Folder;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $fumetti = config('fumetti');
-        return view('layout.main', compact('fumetti'));
+        $comics = Comic::all();
+        return view('index', compact('comics'));
     }
-    public function inedx()
+    public function show(Comic $comic)
     {
-        $fumetti = config('fumetti');
-        return view('header', compact('fumetti'));
-    }
-    public function show()
-    {
-        $fumetti = config('fumetti');
-        return view('card', compact('fumetti'));
+        return view('card', compact('comic'));
     }
     public function create()
     {

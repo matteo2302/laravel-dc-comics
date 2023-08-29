@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fumetto', function (Blueprint $table) {
+        Schema::create('comics', function (Blueprint $table) {
             $table->id();
-            $table->id('description');
-            $table->string('thumb');
+            $table->string('title');
+            $table->text('description');
+            $table->text('thumb');
             $table->string('price');
             $table->string('series');
             $table->string('sale_date');
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fumetto');
+        Schema::dropIfExists('comics');
     }
 };
