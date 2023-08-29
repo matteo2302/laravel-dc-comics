@@ -17,9 +17,9 @@ class HomeController extends Controller
     {
         return view('card', compact('comic'));
     }
-    public function create()
+    public function create(Comic $comic)
     {
-        return view('add');
+        return view('add', compact('comic'));
     }
     public function store(Request $request)
     {
@@ -28,9 +28,9 @@ class HomeController extends Controller
         $comic->fill($data);
         $comic->save();
     }
-    // public function store()
-    // {
-    //     $fumetti = config('fumetti');
-    //     return view('card', compact('fumetti'));
-    // }
+    public function destroy(string $id)
+    {
+        Comic::destroy($id);
+        return to_route('comics.index');
+    }
 }
