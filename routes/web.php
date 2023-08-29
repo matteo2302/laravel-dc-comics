@@ -17,4 +17,4 @@ Route::get('/', [HomeController::class, 'index'])->name('main');
 Route::get('/card/{index}', [HomeController::class, 'show'])->name('card');
 Route::post('/add', [HomeController::class, 'create'])->name('add');
 Route::post('/card/{index}', [HomeController::class, 'store'])->name('card');
-Route::resource('comics', HomeController::class);
+Route::resource('/comics', HomeController::class);

@@ -19,13 +19,14 @@ class HomeController extends Controller
     }
     public function create()
     {
-        $fumetti = config('fumetti');
-        return view('add', compact('fumetti'));
+        return view('add');
     }
-    public function store()
+    public function store(Request $request)
     {
-        $fumetti = config('fumetti');
-        return view('add', compact('fumetti'));
+        $data = $request->all();
+        $comic = new Comic();
+        $comic->fill($data);
+        $comic->save();
     }
     // public function store()
     // {
